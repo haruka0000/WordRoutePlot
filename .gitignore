@@ -1,0 +1,4 @@
+sample*
+.python-version
+twitter/*.dic
+twitter/__pycache__
