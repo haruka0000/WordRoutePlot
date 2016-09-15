@@ -2,6 +2,7 @@ sample*
 .python-version
 twitter/*.dic
 twitter/__pycache__
+*.model
 *.npy
 data.txt
 models/*
