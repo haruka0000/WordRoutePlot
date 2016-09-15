@@ -6,3 +6,4 @@ twitter/__pycache__
 *.npy
 data.txt
 models/*
+texts/*
