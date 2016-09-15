@@ -40,7 +40,7 @@ def plot(ary):
   plt.plot(mkl, '-o')
   plt.show()
 
-  plt.savefig("route.png")
+  #plt.savefig("route.png")
 
 
 def getRoute(start, goal, file_name):
@@ -83,7 +83,12 @@ def getRoute(start, goal, file_name):
   plot(parray)
 
 if __name__=='__main__':
-  start = "桃"
-  goal = "人"
-  file_name = "sample(size200_mc20_w15).model" 
+  #start = "努力"
+  #goal = "研究"
+  #start = "協力"
+  #goal = "成功"
+  start = "友人"
+  goal = "悪魔"
+
+  file_name = "size100_mc30_w15.model" 
   getRoute(start, goal, file_name)
