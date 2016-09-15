@@ -4,6 +4,17 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 fp = FontProperties(fname = '/usr/share/fonts/OTF/TakaoGothic.ttf');
 
+start = "友人"
+goal = "悪魔"
+#start = "努力"
+#goal = "研究"
+#start = "協力"
+#goal = "成功"
+
+
+file_name = "models/size100_mc30_w15.model" 
+
+
 def plot(ary):
   key_list = []
   value_list = []
@@ -38,9 +49,10 @@ def plot(ary):
       plt.text(i, value_list[i][j], key_list[i][j], ha = 'center', va = 'top', fontproperties = fp)
 
   plt.plot(mkl, '-o')
+  #plt.show()
+  pic_name = "result_pic/" + file_name[7:-6] + "_" + start + "_" + goal
+  plt.savefig(pic_name)
   plt.show()
-
-  #plt.savefig("route.png")
 
 
 def getRoute(start, goal, file_name):
@@ -83,12 +95,4 @@ def getRoute(start, goal, file_name):
   plot(parray)
 
 if __name__=='__main__':
-  #start = "努力"
-  #goal = "研究"
-  #start = "協力"
-  #goal = "成功"
-  start = "友人"
-  goal = "悪魔"
-
-  file_name = "size100_mc30_w15.model" 
   getRoute(start, goal, file_name)
