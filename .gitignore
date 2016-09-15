@@ -4,3 +4,4 @@ twitter/*.dic
 twitter/__pycache__
 *.npy
 data.txt
+models/*
