@@ -4,15 +4,18 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 fp = FontProperties(fname = '/usr/share/fonts/OTF/TakaoGothic.ttf');
 
-start = "友人"
-goal = "悪魔"
+#start = "友人"
+#goal = "悪魔"
 #start = "努力"
 #goal = "研究"
 #start = "協力"
 #goal = "成功"
+start = "手芸"
+goal = "釣り"
 
 
-file_name = "models/size100_mc30_w15.model" 
+
+file_name = "models/size50_mc30_w15.model" 
 
 
 def plot(ary):
@@ -21,9 +24,9 @@ def plot(ary):
   for num in ary:
     kl = []
     vl = []
-    print("__________________________________________")
+    #print("__________________________________________")
     for items in num: 
-      print(items) 
+      #print(items) 
       kl.append(items[0])
       vl.append(items[1])
     key_list.append(kl)
@@ -64,29 +67,29 @@ def getRoute(start, goal, file_name):
 
   parray.append([(start, model.similarity(goal,start))])
 
-  print(start)
+  #print(start)
 
   out=model.most_similar(positive=[start], negative=[])
-  for o in out:
-    print(o)
-  print()
+  #for o in out:
+    #print(o)
+  #print()
   
   
   intention = (start,model.similarity(goal,start))
-  print("==========================================")
+  #print("==========================================")
   while True:
     print(intention[0],"\t\t",str(int(intention[1]*100)),"% <=")
     near_words = model.most_similar(positive=[intention[0]], negative=[])
     for nw in near_words:
       similarities[nw[0]] = model.similarity(goal,nw[0])    # 付近のワードとゴールのワードの類似度を取得
-      print("\t",nw[0],"\t\t",str(int(similarities[nw[0]] * 100)),"%")
+      #print("\t",nw[0],"\t\t",str(int(similarities[nw[0]] * 100)),"%")
  
     nr_rslts = sorted(similarities.items(), key=lambda x: x[1], reverse=True)[:5]
     parray.append(nr_rslts)
     most_similar = nr_rslts[0]
 
     if most_similar[0] == intention[0]:
-      print("The word can no longer go near")
+      #print("The word can no longer go near")
       break
     else:
       intention = most_similar
